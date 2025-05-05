@@ -2,7 +2,7 @@
 
  Projeto 1 -  ES47B-ES71- Programacao Web Fullstack
 
-Aplicação web que consome a API de Rick and Morty e exibe os personagens com uma interface estilizada usando React + Vite + Material UI.
+Aplicação web que consome a API de Rick and Morty e exibe os personagens.
 
  Prof. Willian Massami Watanabe
 
