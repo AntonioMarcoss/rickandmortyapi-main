@@ -27,7 +27,6 @@ h1,
   margin: 2rem 0;
 }
 
-/* Personalização do botão MUI */
 .MuiButton-contained {
   background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
   color: #fff;
@@ -44,7 +43,6 @@ h1,
   box-shadow: 0 6px 16px rgba(106, 17, 203, 0.4);
 }
 
-/* Personalização do TextField MUI */
 .MuiOutlinedInput-root {
   border-radius: 10px;
   background-color: #fff;
@@ -56,7 +54,6 @@ h1,
   box-shadow: 0 0 10px rgba(106, 17, 203, 0.2);
 }
 
-/* Layout dos cards */
 .card-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
