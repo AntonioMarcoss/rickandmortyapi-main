@@ -4,7 +4,6 @@ import CharacterCard from './components/CharacterCard';
 import { TextField, Button, Box, Typography } from '@mui/material';
 import { useCharacterContext } from './contexts/CharacterContext';
 
-
 function App() {
   const [search, setSearch] = useState('');
   const { characters, setCharacters } = useCharacterContext();
@@ -33,28 +32,41 @@ function App() {
   }, [characters, search]);
 
   return (
-    <Box sx={{ p: 4 }}>
+    <Box sx={{ p: { xs: 2, md: 4 } }}>
       <Typography variant="h3" gutterBottom align="center">
         Rick and Morty Procurar
       </Typography>
-      <Box sx={{ display: 'flex', gap: 2, mb: 4 }}>
+
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', sm: 'row' },
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: 2,
+          mb: 4,
+        }}
+        className="search-bar"
+      >
         <TextField
           fullWidth
           label="Buscar personagem"
+          aria-label="Buscar personagem"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <Button variant="contained" onClick={handleSearch}>
+        <Button variant="contained" onClick={handleSearch} aria-label="Buscar">
           Buscar
         </Button>
       </Box>
+
       <Box className="card-list">
         {filteredCharacters.length > 0 ? (
           filteredCharacters.map((character) => (
             <CharacterCard key={character.id} character={character} />
           ))
         ) : (
-          <Typography variant="body1">
+          <Typography variant="body1" align="center">
             {search.trim() === ''
               ? 'Digite um nome e clique em "Buscar" para encontrar personagens.'
               : 'Nenhum personagem encontrado.'}
