@@ -23,10 +23,13 @@ João Gabriel Guergolet da Silva
 git clone https://github.com/AntonioMarcoss/rickandmortyapi.git
 
 npm install
+
 npm install @mui/material @emotion/react @emotion/styled
+
 npm install --save-dev @vitejs/plugin-react
 
 https://vercel.com/antoniomarcoss-projects/rickandmortyapi-main
+
 https://rickandmortyapi-main.vercel.app/
 
 - 10 Principais personagens de Rick and Morty:
