@@ -21,3 +21,10 @@ João Gabriel Guergolet da Silva
 1. **Clone o repositório:**
 
 git clone https://github.com/AntonioMarcoss/rickandmortyapi.git
+
+npm install
+npm install @mui/material @emotion/react @emotion/styled
+npm install --save-dev @vitejs/plugin-react
+
+https://vercel.com/antoniomarcoss-projects/rickandmortyapi-main
+https://rickandmortyapi-main.vercel.app/
