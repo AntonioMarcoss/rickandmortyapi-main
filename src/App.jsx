@@ -1,15 +1,22 @@
 import './styles/App.css';
 import React, { useState, useMemo } from 'react';
 import CharacterCard from './components/CharacterCard';
-import { TextField, Button, Box, Typography } from '@mui/material';
+import { TextField, Button, Box, Typography, Alert } from '@mui/material';
 import { useCharacterContext } from './contexts/CharacterContext';
 
 function App() {
   const [search, setSearch] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const { characters, setCharacters } = useCharacterContext();
 
   const handleSearch = async () => {
-    if (!search.trim()) return;
+    if (!search.trim()) {
+      setErrorMessage('Ops! Você esqueceu de digitar o nome do personagem.');
+      setCharacters([]);
+      return;
+    }
+
+    setErrorMessage(''); 
 
     try {
       const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${search}`);
@@ -17,10 +24,12 @@ function App() {
       if (data.results) {
         setCharacters(data.results);
       } else {
+        setErrorMessage('Nenhum personagem encontrado. Que tal tentar outro nome?');
         setCharacters([]);
       }
     } catch (error) {
       console.error('Erro ao buscar personagens:', error);
+      setErrorMessage('Não conseguimos buscar agora. Verifique sua conexão ou tente novamente em alguns minutos.');
       setCharacters([]);
     }
   };
@@ -32,33 +41,27 @@ function App() {
   }, [characters, search]);
 
   return (
-    <Box sx={{ p: { xs: 2, md: 4 } }}>
+    <Box sx={{ p: 4 }}>
       <Typography variant="h3" gutterBottom align="center">
         Rick and Morty Procurar
       </Typography>
-
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', sm: 'row' },
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: 2,
-          mb: 4,
-        }}
-        className="search-bar"
-      >
+      <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
         <TextField
           fullWidth
           label="Buscar personagem"
-          aria-label="Buscar personagem"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <Button variant="contained" onClick={handleSearch} aria-label="Buscar">
+        <Button variant="contained" onClick={handleSearch}>
           Buscar
         </Button>
       </Box>
+
+      {errorMessage && (
+        <Alert severity="error" sx={{ mb: 2 }}>
+          {errorMessage}
+        </Alert>
+      )}
 
       <Box className="card-list">
         {filteredCharacters.length > 0 ? (
@@ -66,11 +69,13 @@ function App() {
             <CharacterCard key={character.id} character={character} />
           ))
         ) : (
-          <Typography variant="body1" align="center">
-            {search.trim() === ''
-              ? 'Digite um nome e clique em "Buscar" para encontrar personagens.'
-              : 'Nenhum personagem encontrado.'}
-          </Typography>
+          !errorMessage && (
+            <Typography variant="body1">
+              {search.trim() === ''
+                ? 'Comece digitando o nome de um personagem para ver os resultados.'
+                : ''}
+            </Typography>
+          )
         )}
       </Box>
     </Box>
