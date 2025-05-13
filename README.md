@@ -21,3 +21,35 @@ João Gabriel Guergolet da Silva
 1. **Clone o repositório:**
 
 git clone https://github.com/AntonioMarcoss/rickandmortyapi.git
+
+npm install
+
+npm install @mui/material @emotion/react @emotion/styled
+
+npm install --save-dev @vitejs/plugin-react
+
+https://vercel.com/antoniomarcoss-projects/rickandmortyapi-main
+
+https://rickandmortyapi-main.vercel.app/
+
+- 10 Principais personagens de Rick and Morty:
+
+Rick Sanchez
+
+Morty Smith
+
+Summer Smith
+
+Beth Smith
+
+Jerry Smith
+
+Birdperson
+
+Mr. Poopybutthole
+
+Evil Morty
+
+Squanchy
+
+Tammy Guetermann
