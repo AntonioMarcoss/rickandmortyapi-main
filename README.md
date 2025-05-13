@@ -9,37 +9,15 @@ Aplicação web que consome a API de Rick and Morty e exibe os personagens.
 Alunos: Antonio Marcos Aparecido da Silva Carvalho e
 João Gabriel Guergolet da Silva 
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - [React]
 - [Vite]
 - [Material UI] (MUI)
 - [JavaScript]
 
-## 📦 Instalação
+## Instalação
 
 1. **Clone o repositório:**
 
 git clone https://github.com/AntonioMarcoss/rickandmortyapi.git
-
-- 10 Principais personagens de Rick and Morty:
-
-Rick Sanchez
-
-Morty Smith
-
-Summer Smith
-
-Beth Smith
-
-Jerry Smith
-
-Birdperson
-
-Mr. Poopybutthole
-
-Evil Morty
-
-Squanchy
-
-Tammy Guetermann
