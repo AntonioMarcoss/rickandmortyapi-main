@@ -1,5 +1,8 @@
 
 # Rick and Morty Fullstack
+Alunos: Antonio Marcos Aparecido da Silva Carvalho
+João Gabriel Guergolet da Silva
+
 
 Este projeto é uma aplicação fullstack baseada na temática Rick and Morty, desenvolvida com:
 - **React.js** no front-end

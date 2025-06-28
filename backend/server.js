@@ -5,23 +5,21 @@ const compression = require("compression");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const authRoutes = require("./src/routes/auth");
 const dataRoutes = require("./src/routes/data");
-
+const authRoutes = require("./src/routes/auth");
 const app = express();
 
 app.use(cors());
 app.use(compression());
 app.use(express.json());
 
-app.use("/auth", authRoutes);
 app.use("/data", dataRoutes);
+app.use("/auth", authRoutes);
 
-// Conexão com MongoDB com pool de conexões
 mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/rickdb", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  maxPoolSize: 10, // pool de conexões
+  maxPoolSize: 10,
 })
 .then(() => console.log("MongoDB conectado"))
 .catch((err) => console.error("Erro ao conectar no MongoDB:", err));
