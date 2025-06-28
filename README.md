@@ -1,7 +1,7 @@
 
 # Rick and Morty Fullstack
-Alunos: Antonio Marcos Aparecido da Silva Carvalho
-
+Alunos: Antonio Marcos Aparecido da Silva Carvalho 
+e
 João Gabriel Guergolet da Silva
 
 
